@@ -114,7 +114,12 @@ void main() {
 </aside>
 <p class="image-container"><img alt="Main Method" src="img/d602abc02b6abd56.png"></p>
 <p>Under the <strong>import</strong> statement, right above the <strong>main</strong> method, add the following line:</p>
-<pre><code language="language-flutter" class="language-flutter">final Color mainColor = Color(0xFFFF5656);
+<pre><code language="language-flutter" class="language-flutter">
+// add this code under the first line of code in the file
+// import 'package:flutter/material.dart';
+
+final Color mainColor = Color(0xFFFF5656);
+
 </code></pre>
 <p>We want to use this <strong><em>mainColor</em></strong> property throughout our application and don&#39;t want to repeat ourselves, hence holding on to this value on this global property.</p>
 <p>Back on the SplashPage widget, add the <strong>color</strong> property and set it to our newly added color, <strong>mainColor</strong>:</p>
@@ -144,7 +149,21 @@ void main() {
 <p class="image-container"><img alt="Splash Page" src="img/b1bc1eccf1d4d081.png"></p>
 <aside class="special"><p>This page only shows a Text widget with the content <strong>Welcome to Mounts of the World!</strong> displayed at the center, thanks to a <a href="https://api.flutter.dev/flutter/widgets/Center-class.html" target="_blank"><strong>Center</strong></a> widget. A <a href="https://api.flutter.dev/flutter/material/Scaffold-class.html" target="_blank"><strong>Scaffold</strong></a> is a great starting point for all your page widgets since it implements the basic material design visual layout structure, so I strongly recommend it.</p>
 </aside>
+<p>Below is the code to help you out:</p>
+<pre><code language="language-flutter" class="language-flutter">
+// add the landing page under the splash page code
 
+class MountsApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('Welcome to Mounts of the World')
+      )
+    );
+  }
+}
+</code></pre>
 
       </google-codelab-step>
     
