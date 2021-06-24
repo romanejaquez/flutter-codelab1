@@ -102,7 +102,16 @@ void main() {
 </aside>
 <p>The <a href="https://api.flutter.dev/flutter/widgets/runApp.html" target="_blank"><strong>runApp</strong></a> method is part of the Flutter framework and is in charge of mounting the root widget on the widget tree. We create the first widget (MaterialApp) which represents the application&#39;s root widget.</p>
 <p>We disable the debugging sash by setting the <strong>debugShowCheckedModeBanner</strong> to <strong><em>false</em></strong>, and set the <strong>home</strong> property of the MaterialApp widget to be our SplashPage widget, which we&#39;ll create in a moment.</p>
-
+        <p>Here's the code you need to add inside the <strong>main</strong> method, to help you out a bit:</p>
+<pre><code language="language-flutter" class="language-flutter">
+// add this code inside the **main** method:
+runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MountsApp()
+    )
+  );
+ </code></pre>
 
       </google-codelab-step>
     
