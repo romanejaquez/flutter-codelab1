@@ -156,11 +156,12 @@ void main() {
 <p>Let&#39;s dissect this code. <strong>Future.delayed</strong> takes two parameters: a <strong>Duration</strong> object with is <strong>seconds</strong> property set to 2, and a callback. When the 2 seconds have ellapsed, it will call the callback.</p>
 <p>The callback has inside a trigger to perform a navigation. We use <strong>Navigator.of</strong> to push a new route to the global navigation stack, using the <strong>BuildContext </strong><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html" target="_blank">context</a> to retrieve the closest navigator in the hierarchy, in our case, the one available by default from the <strong>MaterialApp</strong>. We use a <a href="https://api.flutter.dev/flutter/material/MaterialPageRoute-class.html" target="_blank"><strong>MaterialPageRoute</strong></a> to wrap the widget we want to navigate to, in our case the <strong>MountsApp</strong> widget created earlier.</p>
 <p>You can grab the code from below to help you out:</p>
-<pre><code language="language-flutter" class="language-flutter">import &#39;package:flutter/material.dart&#39;;
+<pre><code language="language-flutter" class="language-flutter">
+// paste this code inside the build method, at the beginning...
 
 Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => MountsApp()));
-    });
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => MountsApp()));
+});
 
 </code></pre>
 
